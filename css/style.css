@@ -1,0 +1,124 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 100%;
+  background: #f8f8f8;
+}
+
+
+form, .content {
+	width: 30%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.9);
+	background: white;
+
+	border-radius: 10px 10px 10px 10px;box-shadow:0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.form-horizontal{
+
+    border-radius: 15px;
+    border: 0px;
+  	padding: 10px;
+}
+
+
+.form-horizontal > .tableset{
+   margin:0 auto 0 auto;
+
+}
+
+.input-group button {
+     margin-top: 10px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 5px;
+}
+.input-group {
+	margin: 10px 0px 10px 0px;
+}
+
+.input-group label {
+	display: block;
+	text-align: left;
+	margin: 3px;
+}
+.input-group input {
+	height: 30px;
+	width: 97%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+.btn{
+	display: block;
+  padding: 4px 15px 4px 15px;
+	font-size: 15px;
+	color:  #007e7e;
+	background: #eff2f7;
+	border: 1px solid #d2d4d8;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.success {
+	color: #3c763d;
+	background: #dff0d8;
+	border: 1px solid #3c763d;
+	margin-bottom: 20px;
+}
+
+.navbar , .navbar-nav > li > a{
+    background-color: darkcyan;
+    color: white;
+    text-decoration: none;
+    padding-right: 10px;
+
+		}
+.navbar-header{
+     background-color: #6ea0a2;
+}
+.navbar-header > a{
+    background-color: #6ea0a2;
+    color: white;
+    text-decoration: none;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: bold;
+
+
+}
+.navbar-header > a >img{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+}
+.navbar-nav > li > a:hover ,.navbar-nav > li > ul> li> a:hover {
+    color: darkcyan;
+
+}
+div .container{
+    display: block;
+		background-color: white;
+}
+div .row{
+    background-color: white;
+    border-radius: 15px;
+    width:95%;
+    margin: auto;
+box-shadow:0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);z-index:3;
+}
+form > p{
+	align-content:center;
+    text-align: center;
+
+}
