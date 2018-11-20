@@ -11,7 +11,7 @@
   <title>Faculty Expenses</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/src/css/style.css">
 
 </head>
 <body>
@@ -59,7 +59,7 @@
     <div class="form-horizontal" id="Subject_name5">
       <input type="text" style="border-color:#d2d4d8" class="form-control" placeholder="Name of Subject" required autofocus >
     </div>
-  
+
   <div class="form-horizontal" id="Yearly_salary">
     <input type="text" style="border-color:#d2d4d8" class="form-control" placeholder="Yearly Salary" required autofocus >
   </div>
@@ -81,7 +81,7 @@
 src="http://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/src/js/main.js"></script>
 
   </body>
 </html>
