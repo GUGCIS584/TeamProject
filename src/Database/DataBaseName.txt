@@ -1,1 +1,1 @@
-project _team_system
+project-team-system
