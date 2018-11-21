@@ -66,6 +66,20 @@ CREATE TABLE `studentdetails` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+--
+-- Table structure of `Supplier`
+DROP TABLE IF EXISTS `Supplier`;
+CREATE TABLE `Supplier` (
+  `supp_id` int(100) NOT NULL,
+  `supp_name` varchar(100) NOT NULL,
+  `date` Date('YY-MM--DD') NOT NULL,
+  `product` varchar(100) NOT NULL,
+  `price` int(100) NOT NULL,
+  `quantities` varchar(100) NOT NULL,
+  `Subject_total` varchar(100) NOT NULL,
+  `total` varchar(100) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- Indexes for dumped tables
 --
 
@@ -81,6 +95,14 @@ ALTER TABLE `facultydetails`
 ALTER TABLE `studentdetails`
   ADD PRIMARY KEY (`id`);
 
+
+-- Indexes for table `Supplier`
+--
+ALTER TABLE `Supplier`
+  ADD PRIMARY KEY (`id`);
+
+
+--
 --
 -- AUTO_INCREMENT for dumped tables
 --
@@ -98,3 +120,10 @@ ALTER TABLE `studentdetails`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+--
+-- AUTO_INCREMENT for table `Supplier`
+--
+ALTER TABLE `Supplier`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;

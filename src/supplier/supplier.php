@@ -1,5 +1,15 @@
 <?php
+include "config.php";
 
+
+if(isset($_REQUEST['submit'])){
+
+	$name=$_REQUEST['Product'];
+
+	$q = mysqli_query($con,"INSERT INTO `Supplier`(`name`) VALUES ('".$name."')");
+
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +25,10 @@
   <div class="form-row">
     <div class="col">
       <br>
-      <input type="text" name="Company Name" class="form-control" placeholder="Company Name">
+      <input type="text" name="
+
+
+	  class="form-control" placeholder="Company Name">
       </br>
 
     <br>
