@@ -1,15 +1,5 @@
 <?php
-include "config.php";
 
-
-if(isset($_REQUEST['submit'])){
-
-	$name=$_REQUEST['Product'];
-
-	$q = mysqli_query($con,"INSERT INTO `Supplier`(`name`) VALUES ('".$name."')");
-
-
-}
 
 ?>
 <!DOCTYPE html>
@@ -19,16 +9,15 @@ if(isset($_REQUEST['submit'])){
 </head>
 </head>
 <body>
+	<h1 style="color: blue; text-align: center">University Financial System</h1>
 <div class="jumbotron">
+	
   <h1 class="display-4">Supplier</h1>
   <form>
   <div class="form-row">
     <div class="col">
       <br>
-      <input type="text" name="
-
-
-	  class="form-control" placeholder="Company Name">
+      <input type="text" name="Company Name" class="form-control" placeholder="Company Name">
       </br>
 
     <br>
