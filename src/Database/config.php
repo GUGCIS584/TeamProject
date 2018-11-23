@@ -3,7 +3,7 @@
 
 $db_host = "localhost";
 $db_username = "root";
-$db_password = "7606MA";
+$db_password = "root";
 $db_name = "project _team_system";
 
 $con = mysqli_connect($db_host,$db_username,$db_password,$db_name);

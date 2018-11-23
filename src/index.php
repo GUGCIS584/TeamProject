@@ -64,13 +64,13 @@ $(document).ready(function(){
   <span class="contact100-form-title">
     University Financial System
   </span>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius:10px">
 
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link label-input100" href="#">Home <span class="sr-only">(current)</span></a>
+                          <a class="nav-link label-input100" href="/src/index.php">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link label-input100" href="/src/student/StIndex.php">Student</a>
@@ -83,9 +83,64 @@ $(document).ready(function(){
                                   </li>
 
                       </ul>
+
+
                     </div>
                   </nav>
+<br/>
+									<form  method="post" class="contact100-form validate-form" id="frmdata">
 
+									<table class="col-lg-12 col-md-12 col-sm-12 " >
+
+										<tr>
+											<td>
+												<div class="wrap-input100 validate-input bg1">
+											    <span class="label-input100">Total Student Expenses*</span>
+											    <input class="input100" type="text" name="student_expense" id="student_expense" placeholder="Student Expenses" disabled>
+											  </div>
+											</td>
+											<td>
+												<div class="wrap-input100 validate-input bg1">
+											    <span class="label-input100">Monthly Student Income*</span>
+											    <input class="input100" type="text" name="student_income" id="student_income" placeholder="Student Income" disabled>
+											  </div>
+											</td>
+										</tr>
+
+										<tr>
+											<td>
+												<div class="wrap-input100 validate-input bg1">
+													<span class="label-input100">Total Faculty Expenses*</span>
+													<input class="input100" type="text" name="faculty_expense" id="faculty_expense" placeholder="Faculty Expenses" disabled>
+												</div>
+											</td>
+											<td>
+												<div class="wrap-input100 validate-input bg1">
+													<span class="label-input100">Monthly University Expenses*</span>
+													<input class="input100" type="text" name="university_expenses" id="university_expenses" placeholder="University Expenses" disabled>
+												</div>
+											</td>
+										</tr>
+										<tr>
+
+											<td>
+												<div class="wrap-input100 validate-input bg1">
+													<span class="label-input100">Total Supplier Expenses*</span>
+													<input class="input100" type="text" name="faculty_expense" id="supplier_expense" placeholder="Supplier Expenses" disabled>
+												</div>
+											</td>
+
+											<td>
+												<div class="wrap-input100 validate-input bg1">
+											    <span class="label-input100">Monthly University Income*</span>
+											    <input class="input100" type="text" name="university_income" id="university_income" placeholder="University Income" disabled>
+											  </div>
+											</td>
+										</tr>
+
+
+									</table>
+								</form>
     </div>
 
 

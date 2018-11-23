@@ -4,7 +4,7 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Student Details</title>
+	<title>Supplier Details</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -59,6 +59,30 @@ $(document).ready(function(){
 <body>
   <div class="container-contact100">
 		<div class="wrap-contact100">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius:10px">
+
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link label-input100" href="/src/index.php">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link label-input100" href="/src/student/StIndex.php">Student</a>
+                  </li>
+                  <li class="nav-item">
+                          <a class="nav-link label-input100" href="/src/Faculty/Faculty.php">Faculty</a>
+                        </li>
+                  <li class="nav-item">
+                          <a class="nav-link label-input100" href="/src/supplier/supplier.php">Supplier</a>
+                            </li>
+
+                </ul>
+
+
+              </div>
+            </nav>
+						<br/>
 			<form class="contact100-form validate-form" id="frmdata">
 				<span class="contact100-form-title">
 					Supplier

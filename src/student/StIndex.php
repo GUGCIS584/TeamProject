@@ -22,13 +22,13 @@
 <script>
 $(document).ready(function(){
     $("#btnsubmit").click(function(){
-		
+
 		if($('#name').val()=="" || $('#department').val()=="" || $('#major').val()=="" || $('#noc').val()=="" || $('#fpc').val()=="" || $('#ws').val()=="" || $('#noh').val()=="" || $('#tow').val()=="" || $('#pph').val()==""){
 			alert("Fill all Fields First!")
 			}
 		else{
-				
-        var edata = $("#frmdata").serialize();    
+
+        var edata = $("#frmdata").serialize();
 			$.ajax({
 		url:"submitapi.php",
 		type:"POST",
@@ -39,13 +39,13 @@ $(document).ready(function(){
 		},
 		success: function(res)
 		{
-		$("#btnsubmit").html('<span>Submit<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>');	
+		$("#btnsubmit").html('<span>Submit<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>');
 		$("#frmdata").hide(500);
 		$("#thanks").html(res);
 		$("#thanks").show(500);
 
 		}
-		
+
 		});
 		}
     });
@@ -57,12 +57,36 @@ $(document).ready(function(){
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius:10px">
+
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link label-input100" href="/src/index.php">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link label-input100" href="/src/student/StIndex.php">Student</a>
+                  </li>
+                  <li class="nav-item">
+                          <a class="nav-link label-input100" href="/src/Faculty/Faculty.php">Faculty</a>
+                        </li>
+                  <li class="nav-item">
+                          <a class="nav-link label-input100" href="/src/supplier/supplier.php">Supplier</a>
+                            </li>
+
+                </ul>
+
+
+              </div>
+            </nav>
+						<br/>
 			<form class="contact100-form validate-form" id="frmdata">
 				<span class="contact100-form-title">
 					STUDENT DETAILS
 				</span>
 
-				
+
  				<div class="wrap-input100 validate-input bg1">
 					<span class="label-input100">FULL NAME *</span>
 					<input class="input100" type="text" name="name" id="name" placeholder="Enter Your Name">
@@ -109,7 +133,7 @@ $(document).ready(function(){
 					</button>
 				</div>
 			</form>
-            
+
             <h3 class="dis-none" id="thanks" style="text-align:center;"></h3>
 		</div>
 	</div>

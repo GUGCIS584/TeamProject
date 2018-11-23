@@ -33,16 +33,19 @@ CREATE TABLE `facultydetails` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
-  `typeofjob` varchar(255) NOT NULL,
+  `typeofjob`  enum('part-time','full-time') NOT NULL,
   `subject_total` enum('1','2','3','4','5') NOT NULL,
   `subject_name1` varchar(255) NOT NULL,
   `subject_name2` varchar(255) NOT NULL,
   `subject_name3` varchar(255) NOT NULL,
   `subject_name4` varchar(255) NOT NULL,
   `subject_name5` varchar(255) NOT NULL,
-  `yearly_salary` varchar(255) NOT NULL,
-  `pay_per_subject` varchar(255) NOT NULL,
-  `hours` int(11) NOT NULL
+  `yearly_salary` float NOT NULL,
+  `pay_per_subject` float NOT NULL,
+  `hours` float NOT NULL,
+  `faculty_total` float NOT NULL
+
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

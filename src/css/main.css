@@ -184,13 +184,16 @@ iframe {
 }
 
 .wrap-contact100 {
-  width: 920px;
+  width: 1100px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   padding: 62px 55px 90px 55px;
 }
+.navbar{
 
+  border-radius: 10px;
+}
 
 /*------------------------------------------------------------------
 [  ]*/
