@@ -59,7 +59,7 @@ $(document).ready(function(){
 <body>
   <div class="container-contact100">
 		<div class="wrap-contact100">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius:10px">
+			<nav class="navbar navbar-expand-lg navbar-expand-sm navbar-light bg-light" style="border-radius:10px">
 
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,19 +71,54 @@ $(document).ready(function(){
                     <a class="nav-link label-input100" href="/src/student/StIndex.php">Student</a>
                   </li>
                   <li class="nav-item">
+                    <?php
+                    $con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
+                    $sql= $con->query("SELECT id,COUNT(*) FROM studentdetails");
+
+                    while($data = mysqli_fetch_array($sql)){
+                    echo '<input type="text" name="student" id="student" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
+                    }
+                    ?>
+                   </li>
+                  <li class="nav-item">
+                      <span class="sr-only">(</span><label type="text" name="student" id="student"><span class="sr-only">)</span>
+                   </li>
+                  <li class="nav-item">
                           <a class="nav-link label-input100" href="/src/Faculty/Faculty.php">Faculty</a>
                         </li>
+                        <li class="nav-item">
+                          <?php
+                          $con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
+                          $sql= $con->query("SELECT id,COUNT(*) FROM facultydetails");
+
+                          while($data = mysqli_fetch_array($sql)){
+                          echo '<input type="text" name="faculty" id="faculty" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
+                          }
+                          ?>
+                         </li>
+
                   <li class="nav-item">
                           <a class="nav-link label-input100" href="/src/supplier/supplier.php">Supplier</a>
                             </li>
+                            <li class="nav-item">
+                              <?php
+                              $con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
+                              $sql= $con->query("SELECT supp_id,COUNT(*) FROM Supplier");
+
+                              while($data = mysqli_fetch_array($sql)){
+                              echo '<input type="text" name="supplier" id="supplier" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
+                              }
+                              ?>
+                             </li>
+
 
                 </ul>
 
 
               </div>
             </nav>
-						<br/>
-			<form class="contact100-form validate-form" id="frmdata">
+            <br/>
+		<form class="contact100-form validate-form" id="frmdata">
 				<span class="contact100-form-title">
 					Supplier
 				</span>

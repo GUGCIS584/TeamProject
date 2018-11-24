@@ -75,12 +75,12 @@ DROP TABLE IF EXISTS `Supplier`;
 CREATE TABLE `Supplier` (
   `supp_id` int(100) NOT NULL,
   `supp_name` varchar(100) NOT NULL,
-  `date` Date('YY-MM--DD') NOT NULL,
+  `date` date NOT NULL,
   `product` varchar(100) NOT NULL,
   `price` int(100) NOT NULL,
   `quantities` varchar(100) NOT NULL,
   `Subject_total` varchar(100) NOT NULL,
-  `total` varchar(100) NOT NULL,
+  `total` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Indexes for dumped tables
@@ -102,7 +102,7 @@ ALTER TABLE `studentdetails`
 -- Indexes for table `Supplier`
 --
 ALTER TABLE `Supplier`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`supp_id`);
 
 
 --
@@ -129,4 +129,4 @@ ALTER TABLE `studentdetails`
 -- AUTO_INCREMENT for table `Supplier`
 --
 ALTER TABLE `Supplier`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `supp_id` int(100) NOT NULL AUTO_INCREMENT;
