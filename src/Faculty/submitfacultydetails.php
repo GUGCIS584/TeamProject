@@ -24,9 +24,10 @@ if($typeofjob=="part-time"){
 
    $monthly_total=$totalsubject*$paypersubject*$hours*4;
 }
-  elseif($typeofjob=="full-time"){
+else if($typeofjob=="full-time"){
     $monthly_total=$ysalary/12;
   }
+
 
 $query="INSERT INTO facultydetails (id,name,department,typeofjob,subject_total,subject1,subject2,subject3,subject4,subject5,yearly_salary,pay_per_subject,hours,faculty_total)
 VALUES ('$id','$name','$department','$typeofjob','$totalsubject','$sub1','$sub2','$sub3','$sub4','$sub5','$ysalary','$paypersubject','$hours','$monthly_total')";
@@ -39,6 +40,5 @@ if($q>0){
 else {
  echo 'Submitting Failed due to unknown reason.';
 }
-
 
 ?>
