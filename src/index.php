@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 <head>
-	<title>Student Details</title>
+	<title>University Financial System</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -135,7 +135,7 @@ $(document).ready(function(){
 													$sql= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
-													echo '<input class="input100" type="text" name="student_expense" id="student_expense" placeholder="Student Expenses" disabled value='.'$'.$data['SUM(noh*pph*4)'].' />';
+													echo '<input class="input100" type="text" name="student_expense" id="student_expense" placeholder="Student Expenses" disabled value='.'$&nbsp;'.$data['SUM(noh*pph*4)'].' />';
 													}
 													?>
 												 </div>
@@ -148,7 +148,7 @@ $(document).ready(function(){
 													$sql= $con->query("SELECT SUM(noc*fpc/6) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
-													echo '<input class="input100" type="text" name="student_income" id="student_income" placeholder="Student Income" disabled value='.'$'.$data['SUM(noc*fpc/6)'].' />';
+													echo '<input class="input100" type="text" name="student_income" id="student_income" placeholder="Student Income" disabled value='.'$&nbsp;'.$data['SUM(noc*fpc/6)'].' />';
 													}
 													?>
 
@@ -165,7 +165,7 @@ $(document).ready(function(){
 													$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
 
 													while($data = mysqli_fetch_array($sql)){
-													echo '<input class="input100" type="text" name="faculty_expense" id="faculty_expense" placeholder="Faculty Expense" disabled value='.'$'.$data['SUM(faculty_total)'].' />';
+													echo '<input class="input100" type="text" name="faculty_expense" id="faculty_expense" placeholder="Faculty Expense" disabled value='.'$&nbsp;'.$data['SUM(faculty_total)'].' />';
 													}
 													?>
 													</div>
@@ -173,7 +173,7 @@ $(document).ready(function(){
 											<td>
 												<div class="wrap-input100 validate-input bg1" style="margin-left:auto; width:98%">
 													<span class="label-input100">Monthly University Expenses*</span>
-													<input class="input100" type="text" name="university_expense" id="university_expense" placeholder="University Expense" disabled value='$'/>
+													<input class="input100" type="text" name="university_expense" id="university_expense" placeholder="University Expense" disabled value='$&nbsp;'/>
  						 					</div>
 											</td>
 										</tr>
@@ -187,7 +187,7 @@ $(document).ready(function(){
 													$sql= $con->query("SELECT SUM(total) FROM supplier");
 
 													while($data = mysqli_fetch_array($sql)){
-													echo '<input class="input100" type="text" name="supplier_expense" id="supplier_expense" placeholder="Supplier Expenses" disabled value='.'$'.$data['SUM(total)'].' />';
+													echo '<input class="input100" type="text" name="supplier_expense" id="supplier_expense" placeholder="Supplier Expenses" disabled value='.'$&nbsp;'.$data['SUM(total)'].' />';
 													}
 													?>		 												</div>
 											</td>
@@ -195,7 +195,7 @@ $(document).ready(function(){
 											<td>
 												<div class="wrap-input100 validate-input bg1" style="margin-left:auto; width:98%">
 											    <span class="label-input100">Monthly University Income*</span>
-											    <input class="input100" type="text" name="university_income" id="university_income" placeholder="University Income" disabled value='$'/>
+											    <input class="input100" type="text" name="university_income" id="university_income" placeholder="University Income" disabled value='$&nbsp;'/>
 											  </div>
 											</td>
 										</tr>

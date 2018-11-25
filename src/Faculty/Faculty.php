@@ -5,7 +5,7 @@
 
 <html>
 <head>
-  <title>Faculty Expenses</title>
+  <title>Faculty Details</title>
 
 
 	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
@@ -86,10 +86,6 @@
   <div class="wrap-input100 validate-input bg1">
     <span class="label-input100">Name *</span>
     <input class="input100" type="text" name="Name" id="Name" placeholder="Enter Your Name">
-  </div>
-  <div class="wrap-input100 validate-input bg1">
-    <span class="label-input100">ID *</span>
-    <input class="input100" type="text" name="ID" id="ID" placeholder="Enter Your ID">
   </div>
   <div class="wrap-input100 validate-input bg1">
     <span class="label-input100">Department *</span>
