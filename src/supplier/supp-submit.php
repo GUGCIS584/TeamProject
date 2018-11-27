@@ -14,7 +14,7 @@ include 'config.php';
 
 
 
-    $query="INSERT INTO facultydetails (name,product,price,qunatities,date,total,total order)
+    $query="INSERT INTO Supplier (name,product,price,qunatities,date,total,total order)
     VALUES ('$name','$product','$price','$quantities','$date','$total','$totalorder')";
 
 
