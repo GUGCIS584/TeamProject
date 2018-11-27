@@ -126,7 +126,7 @@ $(document).ready(function(){
 
         <div class="wrap-input100 validate-input bg1">
           <span class="label-input100">Company name *</span>
-          <input class="input100" type="text" name="Company name" id="Company name" placeholder="Enter Company Name">
+          <input class="input100" type="text" name="Name" id="Name" placeholder="Enter Name">
         </div>
 
         <div class="wrap-input100 validate-input bg1">
