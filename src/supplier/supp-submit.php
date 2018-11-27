@@ -3,19 +3,19 @@ include '../Database/config.php';
 @session_start();
 
 
-    $name = mysqli_real_escape_string($con,$_POST["Company Name"]);
+    $name = mysqli_real_escape_string($con,$_POST[" Name"]);
     $product = mysqli_real_escape_string($con,$_POST["Product"]);
+    $date = mysqli_real_escape_string($con,$_POST["Date"]);
   	$price = mysqli_real_escape_string($con,$_POST["Price"]);
   	$quantities = mysqli_real_escape_string($con,$_POST["Quantities"]);
-  	$date = mysqli_real_escape_string($con,$_POST["Date"]);
   	$total = mysqli_real_escape_string($con,$_POST["Total"]);
   	$totalorder = mysqli_real_escape_string($con,$_POST["Total Order"]);
 
 
 
 
-    $query="INSERT INTO Supplier (name,product,price,qunatities,date,total,total order)
-    VALUES ('$name','$product','$price','$quantities','$date','$total','$totalorder')";
+    $query="INSERT INTO Supplier (name,date,product,price,qunatities,Subject_total,total order)
+    VALUES ('$name','$date','$product','$price','$quantities',,'$total','$totalorder')";
 
 
 
@@ -24,7 +24,7 @@ include '../Database/config.php';
 
 
   }
-  else {zzzzz
+  else {
 	  echo 'Submitting Failed due to unknown reason.';
   }
 
