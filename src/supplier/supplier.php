@@ -128,6 +128,10 @@ $(document).ready(function(){
           <span class="label-input100">Company name *</span>
           <input class="input100" type="text" name="Name" id="Name" placeholder="Enter Name">
         </div>
+				<div class="wrap-input100 validate-input bg1">
+          <span class="label-input100">Date *</span>
+          <input class="input100" type="text" name="Date" id="Date" placeholder="Enter Date">
+        </div>
 
         <div class="wrap-input100 validate-input bg1">
           <span class="label-input100">Product *</span>
@@ -137,10 +141,7 @@ $(document).ready(function(){
           <span class="label-input100">Price *</span>
           <input class="input100" type="text" name="Price" id="Price" placeholder="Enter Price">
         </div>
-				<div class="wrap-input100 validate-input bg1">
-          <span class="label-input100">Date *</span>
-          <input class="input100" type="text" name="Date" id="Date" placeholder="Enter Date">
-        </div>
+
 				<div class="wrap-input100 validate-input bg1">
           <span class="label-input100">Quantities *</span>
           <input class="input100" type="text" name="Quantities" id="Quantities" placeholder="Enter Qauntities">
@@ -154,7 +155,7 @@ $(document).ready(function(){
           <input class="input100" type="text" name="Total Order" id="Total Order" placeholder="Enter Total Order">
         </div>
         <div class="container-contact100-form-btn">
-          <button class="contact100-form-btn" type="button" onclick="index.php" id="btnsubmit">
+          <button class="contact100-form-btn" type="button" id="btnsubmit">
             <span>
               Submit
               <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

@@ -77,10 +77,10 @@ CREATE TABLE `Supplier` (
   `supp_name` varchar(100) NOT NULL,
   `date` Date NOT NULL,
   `product` varchar(100) NOT NULL,
-  `price` int(100) NOT NULL,
-  `quantities` varchar(100) NOT NULL,
-  `Subject_total` varchar(100) NOT NULL,
-  `total` varchar(100) NOT NULL
+  `price` double NOT NULL,
+  `quantities` int(100) NOT NULL,
+  `Subject_total` double NOT NULL,
+  `total` double(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Indexes for dumped tables

@@ -3,19 +3,19 @@ include '../Database/config.php';
 @session_start();
 
 
-    $name = mysqli_real_escape_string($con,$_POST["Company Name"]);
+    $name = mysqli_real_escape_string($con,$_POST["Name"]);
+    $date = mysqli_real_escape_string($con,$_POST["Date"]);
     $product = mysqli_real_escape_string($con,$_POST["Product"]);
   	$price = mysqli_real_escape_string($con,$_POST["Price"]);
   	$quantities = mysqli_real_escape_string($con,$_POST["Quantities"]);
-  	$date = mysqli_real_escape_string($con,$_POST["Date"]);
   	$total = mysqli_real_escape_string($con,$_POST["Total"]);
   	$totalorder = mysqli_real_escape_string($con,$_POST["Total Order"]);
 
 
+    $q = mysqli_query($con,"INSERT INTO `Supplier`(`Name`, `Date`, `Product`,
+      ``, `Price`, `Quantities`, `Total`, `Total Order`) VALUES ('".$name."','".$date."','".$product."',
+        '".$price."','".$quantities."','".$Subject_total."','".$total."')");
 
-
-    $query="INSERT INTO Supplier (name,product,price,qunatities,date,total,total order)
-    VALUES ('$name','$product','$price','$quantities','$date','$total','$totalorder')";
 
 
 

@@ -76,7 +76,7 @@ $(document).ready(function(){
                         </li>
 												<li class="nav-item">
 													<?php
-													$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 													$sql= $con->query("SELECT id,COUNT(*) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
@@ -92,7 +92,7 @@ $(document).ready(function(){
                               </li>
 															<li class="nav-item">
 																<?php
-																$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+																$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 															  $sql= $con->query("SELECT id,COUNT(*) FROM facultydetails");
 
 																while($data = mysqli_fetch_array($sql)){
@@ -106,7 +106,7 @@ $(document).ready(function(){
                                   </li>
 																	<li class="nav-item">
 																		<?php
-																		$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+																		$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 																	  $sql= $con->query("SELECT supp_id,COUNT(*) FROM Supplier");
 
 																		while($data = mysqli_fetch_array($sql)){
@@ -131,7 +131,7 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1" style="width:98%">
 											    <span class="label-input100">Monthly Student Expenses*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 													$sql= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
@@ -144,7 +144,7 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1" style="margin-left:auto; width:98%">
 											    <span class="label-input100">Monthly Student Income*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 													$sql= $con->query("SELECT SUM(noc*fpc/6) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
@@ -161,7 +161,7 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1"style="width:98%">
 													<span class="label-input100">Monthly Faculty Expenses*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 													$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
 
 													while($data = mysqli_fetch_array($sql)){
@@ -183,7 +183,7 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1"style="width:98%">
 													<span class="label-input100">Monthly Supplier Expenses*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 													$sql= $con->query("SELECT SUM(total) FROM supplier");
 
 													while($data = mysqli_fetch_array($sql)){
