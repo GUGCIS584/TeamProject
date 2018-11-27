@@ -24,7 +24,7 @@ include '../Database/config.php';
 
 
   }
-  else {
+  else {zzzzz
 	  echo 'Submitting Failed due to unknown reason.';
   }
 
