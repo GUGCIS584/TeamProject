@@ -137,6 +137,22 @@ $(document).ready(function(){
           <span class="label-input100">Price *</span>
           <input class="input100" type="text" name="Price" id="Price" placeholder="Enter Price">
         </div>
+				<div class="wrap-input100 validate-input bg1">
+          <span class="label-input100">Date *</span>
+          <input class="input100" type="text" name="Date" id="Date" placeholder="Enter Date">
+        </div>
+				<div class="wrap-input100 validate-input bg1">
+          <span class="label-input100">Quantities *</span>
+          <input class="input100" type="text" name="Quantities" id="Quantities" placeholder="Enter Qauntities">
+        </div>
+				<div class="wrap-input100 validate-input bg1">
+          <span class="label-input100">Total *</span>
+          <input class="input100" type="text" name="Total" id="Total" placeholder="Enter Total">
+        </div>
+				<div class="wrap-input100 validate-input bg1">
+          <span class="label-input100">Total Order *</span>
+          <input class="input100" type="text" name="Total Order" id="Total Order" placeholder="Enter Total Order">
+        </div>
         <div class="container-contact100-form-btn">
           <button class="contact100-form-btn" type="button" onclick="order.php" id="btnsubmit">
             <span>

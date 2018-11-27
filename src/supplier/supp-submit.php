@@ -19,8 +19,6 @@ include 'config.php';
 
 
 
-
-
 	if($q>0){
 			  echo 'Supplier Details has been added!';
 
