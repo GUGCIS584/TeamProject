@@ -1,5 +1,5 @@
 <?php
-
+	$base_url = 'localhost/fff/supplier/';
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
         var edata = $("#frmdata").serialize();
 			$.ajax({
-		url:"submitapi.php",
+		url:"supp-submit.php",
 		type:"POST",
 		data:edata,
 		beforeSend: function()
@@ -125,7 +125,7 @@ $(document).ready(function(){
 
 
         <div class="wrap-input100 validate-input bg1">
-          <span class="label-input100">Company name *</span>
+          <span class="label-input100">Company Name *</span>
           <input class="input100" type="text" name="Name" id="Name" placeholder="Enter Name">
         </div>
 
@@ -154,7 +154,7 @@ $(document).ready(function(){
           <input class="input100" type="text" name="Total Order" id="Total Order" placeholder="Enter Total Order">
         </div>
         <div class="container-contact100-form-btn">
-          <button class="contact100-form-btn" type="button" id="btnsubmit">
+          <button class="contact100-form-btn" type="button" onclick="index.php" id="btnsubmit">
             <span>
               Submit
               <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
