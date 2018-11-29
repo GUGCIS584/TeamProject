@@ -1,4 +1,70 @@
 <?php
+namespace src;
+class User
+{
+  public $name;
+  public $department;
+  public $yearlysalary;
+  public $monthlysalary;
+
+  function __construct($name="Josh",$department="CIS",$yearlysalary="60000",$monthlysalary="5000" ){
+
+     }
+
+
+  public function setName($name)
+  {
+    $this->name=$name;
+  }
+
+  public function getName()
+  {
+    return $this->name;
+  }
+
+  public function setDepartment($department)
+  {
+    $this->department=$department;
+  }
+
+  public function getDepartment()
+  {
+    return $this->department;
+  }
+
+   public function setYearlySalary($yearlysalary)
+  {
+    if($yearlysalary>0){
+      $this->yearlysalary=$yearlysalary;
+    }
+    if ($yearlysalary==0){
+      throw new \InvalidArgumentException("Yearly Salary cannot be zero");
+	   }
+
+  }
+  public function getYearlySalary()
+  {
+    return $this->yearlysalary;
+  }
+  public function setMonthlySalary($monthlysalary)
+ {
+   if($monthlysalary>0){
+     $this->monthlysalary=$monthlysalary;
+   }
+   if ($monthlysalary==0){
+     throw new \InvalidArgumentException("Monthly Salary cannot be zero");
+    }
+
+ }
+
+  public function getMonthlySalary()
+  {
+    $monthlysalary=$yearsalary/12;
+    return $this->$monthlysalary;
+  }
+
+
+}
 
 ?>
 <!Doctype html>
@@ -56,7 +122,7 @@
                           ?>
                          </li>
 
-                  <li class="nav-item">
+                         <li class="nav-item">
                           <a class="nav-link label-input100" href="/src/supplier/supplier.php">Supplier</a>
                             </li>
                             <li class="nav-item">
