@@ -75,12 +75,12 @@ DROP TABLE IF EXISTS `Supplier`;
 CREATE TABLE `Supplier` (
   `supp_id` int(100) NOT NULL,
   `supp_name` varchar(100) NOT NULL,
-  `date` Date NOT NULL,
+  `date` varchar(20) NOT NULL,
   `product` varchar(100) NOT NULL,
   `price` double NOT NULL,
   `quantities` int(100) NOT NULL,
   `Subject_total` double NOT NULL,
-  `total` double(100) NOT NULL
+  `total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Indexes for dumped tables
