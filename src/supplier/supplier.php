@@ -154,7 +154,7 @@ $(document).ready(function(){
           <input class="input100" type="text" name="Total Order" id="Total Order" placeholder="Enter Total Order">
         </div>
         <div class="container-contact100-form-btn">
-          <button class="contact100-form-btn" type="button" onclick="index.php" id="btnsubmit">
+          <button class="contact100-form-btn" type="button" id="btnsubmit">
             <span>
               Submit
               <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

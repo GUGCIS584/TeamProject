@@ -11,11 +11,10 @@ include '../Database/config.php';
   	$total = mysqli_real_escape_string($con,$_POST["Total"]);
   	$totalorder = mysqli_real_escape_string($con,$_POST["Total Order"]);
 
+    $q = mysqli_query($con,"INSERT INTO `studentdetails`(`name`, `product`, `date`,
+      `price`, `quantities`, `total`, `total order`) VALUES ('".$name."','".$product."','".$date."',
+        '".$price."','".$quantities."','".$total."','".$totalorder."')");
 
-
-
-    $query="INSERT INTO Supplier (name,date,product,price,qunatities,Subject_total,total order)
-    VALUES ('$name','$date','$product','$price','$quantities',,'$total','$totalorder')";
 
 
 
