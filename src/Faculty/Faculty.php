@@ -4,8 +4,17 @@ class User
 {
   public $name;
   public $department;
+  public $typeofjob;
+  public $totalsubject;
+  public $sub1;
+  public $sub2;
+  public $sub3;
+  public $sub4;
+  public $sub5;
   public $yearlysalary;
   public $monthlysalary;
+  public $paypersubject;
+  public $hours;
 
   function __construct($name="Josh",$department="CIS",$yearlysalary="60000",$monthlysalary="5000" ){
 
@@ -31,7 +40,66 @@ class User
   {
     return $this->department;
   }
+  public function setTypeofJob($typeofjob)
+  {
+    $this->typeofjob=$typeofjob;
+  }
 
+  public function getTypeofJob($typeofjob)
+  {
+    return $this->typeofjob;
+  }
+  public function setTotalSubject($totalsubject)
+  {
+    $this->totalsubject=$totalsubject;
+  }
+
+  public function getTotalSubject($totalsubject)
+  {
+    return $this->totalsubject;
+  }
+  public function setSubject1($sub1)
+  {
+    $this->sub1=$sub1;
+  }
+
+  public function getSubject1($sub1)
+  {
+    return $this->sub1;
+  }
+  public function setSubject2($sub2)
+  {
+    $this->sub2=$sub2;
+  }
+
+  public function getSubject2($sub2)
+  {
+    return $this->sub2;
+  }  public function setSubject3($sub3)
+    {
+      $this->sub3=$sub3;
+    }
+
+    public function getSubject3($sub3)
+    {
+      return $this->sub3;
+    }  public function setSubject4($sub4)
+      {
+        $this->sub4=$sub4;
+      }
+
+      public function getSubject4($sub4)
+      {
+        return $this->sub4;
+      }  public function setSubject5($sub5)
+        {
+          $this->sub5=$sub5;
+        }
+
+        public function getSubject5($sub5)
+        {
+          return $this->sub5;
+        }
    public function setYearlySalary($yearlysalary)
   {
     if($yearlysalary>0){
@@ -62,7 +130,23 @@ class User
     $monthlysalary=$yearsalary/12;
     return $this->$monthlysalary;
   }
+  public function setPayPerSubject($paypersubject)
+  {
+    $this->paypersubject=$paypersubject;
+  }
 
+  public function getPayPerSubject($paypersubject)
+  {
+    return $this->paypersubject;
+  }  public function setHours($hours)
+    {
+      $this->hours=$hours;
+    }
+
+    public function getHours($hours)
+    {
+      return $this->hours;
+    }
 
 }
 
@@ -205,6 +289,17 @@ class User
     <span class="label-input100">No. of Hours (Weekly)*</span>
     <input type="text"  class="input100" name="hrs" id="hrs" placeholder="No. of Hours">
   </div>
+  <div class="wrap-input100 validate-input bg1" id="File">
+  					<input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple="">
+  					<label for="file-1" class="input100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+              <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+              </path>
+              </svg>
+              <span>Choose a file…</span></label>
+
+  </div>
+
 
   <div class="container-contact100-form-btn">
     <input  type="submit" class="contact100-form-btn" id="faculty_submit"/>
@@ -214,6 +309,8 @@ class User
 </div>
 
 <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/src/js/custom-file-input.js"></script>
+<script type="text/javascript" src="/src/js/jquery.custom-file-input.js"></script>
 
 <script type="text/javascript" src="/src/js/main.js"></script>
 <script type="text/javascript">
@@ -293,10 +390,40 @@ $(document).ready(function(){
 
     $("#frmdata").on('submit', function(event){
      event.preventDefault();
-		if($('#Name').val()=="" || $('#ID').val()=="" || $('#Department').val()==""|| $('#Type_of_job').val()=="" || $('#Subject_total').val()=="")
+
+
+   if($('#Name').val()=="" || $('#ID').val()=="" || $('#Department').val()==""|| $('#Type_of_job').val()=="" || $('#Subject_total').val()=="")
     {
-      alert("Fill all Fields First!")
+      if($('#file-1').val()!=""){
+
+            var edata = $("#frmdata").serialize();
+            console.log(edata);
+          $.ajax({
+        url:"submitfacultydetails.php",
+        type:"POST",
+        data:edata,
+        beforeSend: function()
+        {
+          $("#faculty_submit").html("<center><i class='fa fa-spinner fa-spin'></center>");
+        },
+        success: function(res)
+        {
+        $("#faculty_submit").html('<span>Submit<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i></span>');
+        $("#frmdata").hide(500);
+        $("#thanks").html(res);
+        $("#thanks").show(500);
+
+        }
+
+        });
+
+      }
+      else{
+        alert("Fill all Fields First!")
+      }
+
 			}
+
 		else{
 
         var edata = $("#frmdata").serialize();

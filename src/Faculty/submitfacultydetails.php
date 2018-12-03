@@ -18,6 +18,7 @@ $sub5 = mysqli_real_escape_string($con,$_POST['Subject5']);
 $ysalary = mysqli_real_escape_string($con,$_POST['Ysalary']);
 $paypersubject = mysqli_real_escape_string($con,$_POST['Paypersubject']);
 $hours = mysqli_real_escape_string($con,$_POST['hrs']);
+$fileupload = mysqli_real_escape_string($con,$_POST['file-1']);
 
 if($typeofjob=="part-time"){
 
@@ -29,8 +30,8 @@ else if($typeofjob=="full-time"){
   }
 
 
-$query="INSERT INTO facultydetails (name,department,typeofjob,subject_total,subject1,subject2,subject3,subject4,subject5,yearly_salary,pay_per_subject,hours,faculty_total)
-VALUES ('$name','$department','$typeofjob','$totalsubject','$sub1','$sub2','$sub3','$sub4','$sub5','$ysalary','$paypersubject','$hours','$monthly_total')";
+$query="INSERT INTO facultydetails (name,department,typeofjob,subject_total,subject1,subject2,subject3,subject4,subject5,yearly_salary,pay_per_subject,hours,faculty_total,file_upload)
+VALUES ('$name','$department','$typeofjob','$totalsubject','$sub1','$sub2','$sub3','$sub4','$sub5','$ysalary','$paypersubject','$hours','$monthly_total','$fileupload')";
 
 $q = mysqli_query($con,$query);
 

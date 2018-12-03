@@ -43,7 +43,8 @@ CREATE TABLE `facultydetails` (
   `yearly_salary` float NOT NULL,
   `pay_per_subject` float NOT NULL,
   `hours` float NOT NULL,
-  `faculty_total` float NOT NULL
+  `faculty_total` float NOT NULL,
+  `file_upload` varbinary(60000) NOT NULL
 
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

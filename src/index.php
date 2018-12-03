@@ -159,7 +159,7 @@ $(document).ready(function(){
 										<tr>
 											<td>
 												<div class="wrap-input100 validate-input bg1"style="width:98%">
-													<span class="label-input100">Monthly Expense on Student*</span>
+													<span class="label-input100">Monthly Expense on Faculty*</span>
 													<?php
 													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
 													$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
@@ -176,10 +176,20 @@ $(document).ready(function(){
                           <?php
                           $con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
                           $sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
-                          $data = mysqli_fetch_array($sql);
+													$sql1= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
+													$sql2= $con->query("SELECT SUM(total) FROM supplier");
 
-                          echo '<input class="input100" type="text" name="supplier_expense" id="supplier_expense" placeholder="Supplier Expenses" disabled value='.'$&nbsp;'.$data['SUM(f.faculty_total)'].' />';
 
+                          $data= mysqli_fetch_array($sql);
+
+													$data1 = mysqli_fetch_array($sql1);
+
+													$data2 = mysqli_fetch_array($sql2);
+
+													$intID=$data[0]+$data1[0]+$data2[0];
+
+                          echo '<input class="input100" type="text" name="supplier_expense" id="supplier_expense"
+													placeholder="Supplier Expenses" disabled value='.'$&nbsp;'.$data1['SUM(noh*pph*4)'].'&nbsp;+&nbsp;'.'$&nbsp;'.$data['SUM(faculty_total)'].'&nbsp;+&nbsp;'.'$&nbsp;'.$data2['SUM(total)'].'&nbsp;=&nbsp;'.'$&nbsp;'.$intID.' />';
                           ?>		</div>
 											</td>
 										</tr>
@@ -201,8 +211,30 @@ $(document).ready(function(){
 											<td>
 												<div class="wrap-input100 validate-input bg1" style="margin-left:auto; width:98%">
 											    <span class="label-input100">Monthly University Income*</span>
-											    <input class="input100" type="text" name="university_income" id="university_income" placeholder="University Income" disabled value='$&nbsp;'/>
-											  </div>
+													<?php
+													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
+													$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
+													$sql1= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
+													$sql2= $con->query("SELECT SUM(total) FROM supplier");
+													$sql3= $con->query("SELECT SUM(noc*fpc/6) FROM studentdetails");
+
+
+													$data= mysqli_fetch_array($sql);
+
+													$data1 = mysqli_fetch_array($sql1);
+
+													$data2 = mysqli_fetch_array($sql2);
+
+													$data3= mysqli_fetch_array($sql3);
+
+													$intID=$data[0]+$data1[0]+$data2[0];
+													$intID2=$data3[0];
+													$intID3=$intID2-$intID;
+
+													echo '<input class="input100" type="text" name="university_income" id="university_income"
+													placeholder="SUniversity Income" disabled value='.'$&nbsp;'.$intID2.'&nbsp;-&nbsp;'.'$&nbsp;'.$intID.'&nbsp;=&nbsp;'.'$&nbsp;'.$intID3.' />';
+													?>
+											 	  </div>
 											</td>
 										</tr>
 

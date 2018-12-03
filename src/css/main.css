@@ -87,6 +87,7 @@ ul, li {
 
 
 /*---------------------------------------------*/
+
 input {
 	outline: none;
 	border: none;
@@ -259,6 +260,37 @@ iframe {
 
 
 /*---------------------------------------------*/
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+input[type="file" i] {
+    align-items: baseline;
+    color: inherit;
+    text-align: start !important;
+}
+input[type="hidden" i], input[type="image" i], input[type="file" i] {
+    -webkit-appearance: initial;
+    background-color: initial;
+    cursor: default;
+    padding: initial;
+    border: initial;
+}
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+  
+}
 input.input100 {
   height: 40px;
 }
@@ -723,6 +755,7 @@ textarea.input100 {
 #filter-bar .noUi-handle:after {
   display: none;
 }
+
 
 @media (max-width: 576px) {
   .wrap-contact100-form-range {
