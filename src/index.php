@@ -1,4 +1,11 @@
 <?php
+error_reporting(1);
+ini_set('display_errors', 1);
+include_once 'Database/config.php';
+
+/* Query to select the total order amount */
+$sqlOrdersSum = $con->query("SELECT SUM(Total_Order) AS totalOrderSum FROM orders");
+$orderSum = mysqli_fetch_array($sqlOrdersSum);
 
 ?>
 
@@ -76,8 +83,10 @@ $(document).ready(function(){
                         </li>
 												<li class="nav-item">
 													<?php
-													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-													$sql= $con->query("SELECT id,COUNT(*) FROM studentdetails");
+												//	$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');	
+																									
+
+												$sql= $con->query("SELECT id,COUNT(*) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
 													echo '<input type="text" name="student" id="student" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
@@ -92,8 +101,9 @@ $(document).ready(function(){
                               </li>
 															<li class="nav-item">
 																<?php
-																$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-															  $sql= $con->query("SELECT id,COUNT(*) FROM facultydetails");
+												//	$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');	
+
+																										  $sql= $con->query("SELECT id,COUNT(*) FROM facultydetails");
 
 																while($data = mysqli_fetch_array($sql)){
 																echo '<input type="text" name="faculty" id="faculty" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
@@ -106,8 +116,9 @@ $(document).ready(function(){
                                   </li>
 																	<li class="nav-item">
 																		<?php
-																		$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-																	  $sql= $con->query("SELECT supp_id,COUNT(*) FROM Supplier");
+														//	$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');	
+
+																			  $sql= $con->query("SELECT supp_id,COUNT(*) FROM Supplier");
 
 																		while($data = mysqli_fetch_array($sql)){
 																		echo '<input type="text" name="supplier" id="supplier" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
@@ -131,8 +142,8 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1" style="width:98%">
 											    <span class="label-input100">Monthly Expense on Student *</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-													$sql= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
+													//$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');												
+														$sql= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
 													echo '<input class="input100" type="text" name="student_expense" id="student_expense" placeholder="Student Expenses" disabled value='.'$&nbsp;'.$data['SUM(noh*pph*4)'].' />';
@@ -144,8 +155,8 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1" style="margin-left:auto; width:98%">
 											    <span class="label-input100">Monthly Income From Student*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-													$sql= $con->query("SELECT SUM(noc*fpc/6) FROM studentdetails");
+													//$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');												
+														$sql= $con->query("SELECT SUM(noc*fpc/6) FROM studentdetails");
 
 													while($data = mysqli_fetch_array($sql)){
 													echo '<input class="input100" type="text" name="student_income" id="student_income" placeholder="Student Income" disabled value='.'$&nbsp;'.$data['SUM(noc*fpc/6)'].' />';
@@ -161,8 +172,8 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1"style="width:98%">
 													<span class="label-input100">Monthly Expense on Faculty*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-													$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
+													//$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');												
+														$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
 
 													while($data = mysqli_fetch_array($sql)){
 													echo '<input class="input100" type="text" name="faculty_expense" id="faculty_expense" placeholder="Faculty Expense" disabled value='.'$&nbsp;'.$data['SUM(faculty_total)'].' />';
@@ -174,7 +185,8 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1" style="margin-left:auto; width:98%">
 													<span class="label-input100">Monthly University Expenses*</span>
                           <?php
-                          $con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
+                          //$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
+                          
                           $sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
 													$sql1= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
 													$sql2= $con->query("SELECT SUM(total) FROM supplier");
@@ -186,10 +198,10 @@ $(document).ready(function(){
 
 													$data2 = mysqli_fetch_array($sql2);
 
-													$intID=$data[0]+$data1[0]+$data2[0];
+													$intID=$data[0]+$data1[0]+$data2[0] + $orderSum["totalOrderSum"];
 
                           echo '<input class="input100" type="text" name="supplier_expense" id="supplier_expense"
-													placeholder="Supplier Expenses" disabled value='.'$&nbsp;'.$data1['SUM(noh*pph*4)'].'&nbsp;+&nbsp;'.'$&nbsp;'.$data['SUM(faculty_total)'].'&nbsp;+&nbsp;'.'$&nbsp;'.$data2['SUM(total)'].'&nbsp;=&nbsp;'.'$&nbsp;'.$intID.' />';
+													placeholder="Supplier Expenses" disabled value='.'$&nbsp;'.$data1['SUM(noh*pph*4)'].'&nbsp;+&nbsp;'.'$&nbsp;'.$data['SUM(faculty_total)'].'&nbsp;+&nbsp;'.'$&nbsp;'.$orderSum['totalOrderSum'].'&nbsp;=&nbsp;'.'$&nbsp;'.$intID.' />';
                           ?>		</div>
 											</td>
 										</tr>
@@ -199,12 +211,12 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1"style="width:98%">
 													<span class="label-input100">Monthly Expense on Supplier*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-													$sql= $con->query("SELECT SUM(total) FROM supplier");
+												//	$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');												
+														//$sql= $con->query("SELECT SUM(total) FROM supplier");
 
-													while($data = mysqli_fetch_array($sql)){
-													echo '<input class="input100" type="text" name="supplier_expense" id="supplier_expense" placeholder="Supplier Expenses" disabled value='.'$&nbsp;'.$data['SUM(total)'].' />';
-													}
+													//while($data = mysqli_fetch_array($sql)){
+													echo '<input class="input100" type="text" name="supplier_expense" id="supplier_expense" placeholder="Supplier Expenses" disabled value="$ '  . $orderSum['totalOrderSum'] . '" />';
+													//}
 													?>		 												</div>
 											</td>
 
@@ -212,8 +224,8 @@ $(document).ready(function(){
 												<div class="wrap-input100 validate-input bg1" style="margin-left:auto; width:98%">
 											    <span class="label-input100">Monthly University Income*</span>
 													<?php
-													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-													$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
+													//$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');
+																										$sql= $con->query("SELECT SUM(faculty_total) FROM facultydetails");
 													$sql1= $con->query("SELECT SUM(noh*pph*4) FROM studentdetails");
 													$sql2= $con->query("SELECT SUM(total) FROM supplier");
 													$sql3= $con->query("SELECT SUM(noc*fpc/6) FROM studentdetails");

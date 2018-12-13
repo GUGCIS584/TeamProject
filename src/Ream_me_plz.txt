@@ -1,0 +1,4 @@
+hello guys
+I have create php file for conection to the database
+mean no need to type  mysqli_connect above each query.
+thanks

@@ -1,3 +1,9 @@
+<?php
+error_reporting(1);
+ini_set('display_errors', 1);
+include_once '../Database/config.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,8 +76,8 @@ $(document).ready(function(){
 									</li>
 									<li class="nav-item">
 										<?php
-										$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-										$sql= $con->query("SELECT id,COUNT(*) FROM studentdetails");
+												//	$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');							
+																$sql= $con->query("SELECT id,COUNT(*) FROM studentdetails");
 
 										while($data = mysqli_fetch_array($sql)){
 										echo '<input type="text" name="student" id="student" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
@@ -86,8 +92,8 @@ $(document).ready(function(){
 												</li>
 												<li class="nav-item">
 													<?php
-													$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-													$sql= $con->query("SELECT id,COUNT(*) FROM facultydetails");
+												//	$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');												
+														$sql= $con->query("SELECT id,COUNT(*) FROM facultydetails");
 
 													while($data = mysqli_fetch_array($sql)){
 													echo '<input type="text" name="faculty" id="faculty" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
@@ -100,8 +106,8 @@ $(document).ready(function(){
 														</li>
 														<li class="nav-item">
 															<?php
-															$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
-															$sql= $con->query("SELECT supp_id,COUNT(*) FROM Supplier");
+														//	$con = mysqli_connect('localhost', 'root', '7606MA', 'project-team-system');														
+																$sql= $con->query("SELECT supp_id,COUNT(*) FROM Supplier");
 
 															while($data = mysqli_fetch_array($sql)){
 															echo '<input type="text" name="supplier" id="supplier" style="width:30px"class="input100" disabled value='.$data['COUNT(*)'].' />';
