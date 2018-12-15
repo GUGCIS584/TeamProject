@@ -1,7 +1,8 @@
 <?php
 session_start();
+include_once '../Database/config.php';
 
-$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
+//$con = mysqli_connect('localhost', 'root', 'root', 'project-team-system');
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
     }
@@ -18,7 +19,7 @@ $sub5 = mysqli_real_escape_string($con,$_POST['Subject5']);
 $ysalary = mysqli_real_escape_string($con,$_POST['Ysalary']);
 $paypersubject = mysqli_real_escape_string($con,$_POST['Paypersubject']);
 $hours = mysqli_real_escape_string($con,$_POST['hrs']);
-$fileupload = mysqli_real_escape_string($con,$_POST['file-1']);
+//$fileupload = mysqli_real_escape_string($con,$_POST['file-1']);
 
 if($typeofjob=="part-time"){
 
